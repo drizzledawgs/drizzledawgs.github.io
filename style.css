@@ -135,3 +135,10 @@ a:visited {
     background-color: transparent;
     text-decoration: none;
 }
+
+tr {
+    padding-bottom: 5%;
+}
+td {
+    padding-bottom: 5%;
+}
