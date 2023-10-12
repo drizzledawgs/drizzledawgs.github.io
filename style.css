@@ -1,6 +1,5 @@
-
-/* dont ever set positions of stuff to absolute pixels */
-/* worst mistake of my life */
+/* none of these fucking names actually relate to what theyre used for */
+/* i am incapible of naming functions and stuff normally */
 
 body {
     font-family: "ＭＳ Ｐゴシック";
@@ -11,12 +10,6 @@ body {
     margin-right: auto;
     background: #26262F;
 }
-
-/* fallback since i think most non windows pcs dont come with p gothic */
-@font-face {
-    font-family: "MS P Gothic";
-    src: url('MS_PGothic.ttf');
-  }
 
 .footer {
     margin-left: auto;
