@@ -9,7 +9,7 @@ if (isMobileDevice()) {
 }
 
 // chatgpt json loading code bc i dont really know js
-fetch('./news.json')
+fetch('news.json')
 .then(response => response.json())
 .then(data => {
     const newsTable = document.getElementById('newsTable');
