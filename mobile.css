@@ -1,5 +1,8 @@
 /* mobile version of site bc i hate responsive web design */
 
+/* removed font loading because im not getting the user to download a 
+    whole fuckass 15mb font just so the site looks pretty 
+    god does the site look ugly as fuck now though                  */
 body {
     color:#F9F7F5;
     width: 95%;
