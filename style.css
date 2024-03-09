@@ -1,150 +1,25 @@
-/* none of these fucking names actually relate to what theyre used for */
-/* i am incapible of naming functions and stuff normally */
-
 body {
-    font-family: "ＭＳ Ｐゴシック";
     color:#F9F7F5;
-    width: 60%;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    background: #26262F;
-}
-
-.footer {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    bottom: 0%;
-    margin-top: 0%;
-}
-
-
-.headbox {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.introbox {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1%;
-    background-size: auto 80px;
-    background-color: #26262F;
-    border: 3px solid #98b6a0;
-    border-radius: 6px;
-    height: auto;
-    width: 93%;
-    position: relative;
-    padding: 10px;
-}
-
-
-.aboutbox {
-    margin-left: 1%;
-    float: left;
-    background-color: #26262F;
-    border: 3px solid #98b6a0;
-    border-radius: 6px;
-    padding: 10px;
-    width: 72%;
-    height: auto;
-    margin-top: 8px;
-    position: relative;
-}
-
-.grouphoto {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-  }
-
-.profiles {
-    width: 400px;
-    height: auto;
-    margin-top: 8px;
-    position: relative;
-    padding-bottom: 10%;
-}
-
-.profileimage {
-    float: right;
-    padding: 1%;
-    padding-top: 1%;
-    border-radius: 8%;
-}
-
-
-.links {
-    margin-left: 77%;
-    background-color: #F9F7F5;
-    border: 3px solid #98b6a0;
-    background-image: url(img/bg.png);
-    border-radius: 6px;
-    padding: 10px;
-    width: 18%;
-    margin-top: 8px;
-    position: relative;
+    background: #1a1220;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
+    font-feature-settings: normal;
+    background-image: url("img/bg.webp");
+    background-attachment:fixed;
+    background-size: 40%;
+    image-rendering: pixelated;
+    background-position:center;
+    background-repeat: no-repeat;
     text-align: center;
 }
 
-.welcome {
-    text-align: center;
+body > h2 {
+    font-size: 250%;
 }
 
-.coolvideo {
-    margin-top: 5%;
-}
-
-
-.error {
-    text-align: center;
-    font-size: x-large;
-    margin-bottom: 0%;
-}
-
-.moreinfo {
-    margin-top: 0%;
-    text-align: center;
-    font-size: large;
-}
-
-
-.ddawglogo {
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 0%;
-    display: block;
-    position: relative;
-    bottom: 1%;
-    z-index: 10;
-    width:15%;
-    height:auto;
-}
-
-.boxheader {
-    margin-right: auto;
-    display: block;
-    position: relative;
-    bottom: 5px;
-    z-index: 10;
-}
-
-a:link {
-    color: rgb(216, 237, 252);
-    background-color: transparent;
-    text-decoration: none;
-}
-  
-a:visited {
-    color: rgb(167, 206, 233);
-    background-color: transparent;
-    text-decoration: none;
-}
-
-tr {
-    padding-bottom: 5%;
-}
-td {
-    padding-bottom: 5%;
+p {
+    font-size: 75%;
+    position: absolute;
+    padding-left: auto;
+    padding-right: auto;
+    bottom: 0;
 }

@@ -22,6 +22,9 @@ fetch('news.json')
         dateCell.textContent = newsItem.date;
         detailsCell.innerHTML = `${newsItem.details.replace(/\n/g, '<br>')}`;
         
+        detailsCell.style.textAlign = "right";
+        detailsCell.style.textAlign = "right";
+
     });
 })
 .catch(error => {
