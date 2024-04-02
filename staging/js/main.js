@@ -1,0 +1,30 @@
+// get screen aspect ratio
+document.addEventListener("DOMContentLoaded", function() {
+    var windowHeight = window.innerHeight;
+    var windowWidth = window.innerWidth;
+    var aspectRatio = windowWidth / windowHeight;
+
+    if (aspectRatio > 1.5) {
+        document.body.style.backgroundSize = "40%";
+        document.querySelector('.topbar > h2').style.fontSize = "400%";
+        document.querySelectorAll('body > h2').forEach(element => {
+            element.style.fontSize = "250%";
+        });
+        console.log("pc / 16:9 layout")
+    } else if (aspectRatio >= 0.7 && aspectRatio <= 1.5) {
+        document.body.style.backgroundSize = "50%";
+        document.querySelector('.topbar > h2').style.fontSize = "350%";
+        document.querySelectorAll('body > h2').forEach(element => {
+            element.style.fontSize = "200%";
+        });
+        console.log("tablet / 4:3 layout")
+    } else {
+        document.body.style.backgroundSize = "80%";
+        document.querySelector('.topbar > h2').style.fontSize = "300%";
+        console.log("mobile layout")
+        document.querySelectorAll('body > h2').forEach(element => {
+            element.style.fontSize = "150%";
+        });
+        console.log("mobile layout")
+    }
+});
