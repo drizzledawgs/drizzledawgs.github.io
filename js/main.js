@@ -23,12 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.topbar > h2').style.fontSize = "300%";
         console.log("mobile layout")
         document.querySelectorAll('body > h2').forEach(element => {
-            element.style.fontSize = "180%";
+            element.style.fontSize = "160%";
         });
         document.querySelectorAll('body > h3').forEach(element => {
-            element.style.fontSize = "180%";
+            element.style.fontSize = "160%";
         });
-        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "180%";
+        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "160%";
         console.log("mobile layout")
     }
 });

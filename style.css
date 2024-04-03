@@ -9,6 +9,7 @@ body {
     image-rendering: pixelated;
     background-position:center;
     background-repeat: no-repeat;
+    min-height:100%
 }
 
 p {
@@ -88,10 +89,10 @@ body > h3 {
 }
 
 .footer {
-    position:absolute;
-    bottom:0;
-    width:99%;
-    height:40px;
+    position: fixed; /* Change from absolute to fixed */
+    bottom: 0;
+    width: 100%; /* Adjusted to 100% */
+    height: 40px;
     text-align: center;
 }
 
