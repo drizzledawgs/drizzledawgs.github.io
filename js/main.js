@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.topbar > h2').style.fontSize = "300%";
         document.getElementById("footer").remove();
         document.querySelectorAll('body > h2').forEach(element => {
-            element.style.fontSize = "145%";
+            element.style.fontSize = "100%";
         });
         document.querySelectorAll('body > h3').forEach(element => {
             element.style.fontSize = "145%";
