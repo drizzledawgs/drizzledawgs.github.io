@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
             element.style.fontSize = "250%";
         });
         console.log("pc / 16:9 layout")
-    } else if (aspectRatio >= 0.7 && aspectRatio <= 1.5) {
+    } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
         document.body.style.backgroundSize = "50%";
         document.querySelector('.topbar > h2').style.fontSize = "350%";
         document.querySelectorAll('body > h2').forEach(element => {
@@ -19,9 +19,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         console.log("tablet / 4:3 layout")
     } else {
+
         document.body.style.backgroundSize = "80%";
         document.querySelector('.topbar > h2').style.fontSize = "300%";
-        console.log("mobile layout")
+        document.getElementById("footer").remove();
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "145%";
         });
