@@ -30,18 +30,20 @@ document.addEventListener("DOMContentLoaded", function() {
             element.style.fontSize = "185%";
         });
 
-        if (document.title === "DRIZZLE DAWG // INDEX") {
-            document.body.appendChild(document.createElement("br"));
-            document.body.appendChild(document.createElement("br")); 
-            var newHeading = document.createElement("h3");
-            newHeading.textContent = "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. THERE WILL BE ISSUES WITH THE SITE ON YOUR PHONE BECAUSE OPTIMISING FOR MOBILE IS HELL";
-            document.body.appendChild(newHeading);
-            document.body.appendChild(document.createElement("br"));
-            document.body.appendChild(document.createElement("br"));
-            var newHeading = document.createElement("h3");
-            newHeading.textContent = "IM WORKING ON IT BUT SHIT TAKES TIME, YKNOW";
-            document.body.appendChild(newHeading);
-        };
+        window.addEventListener('DOMContentLoaded', () => {
+            if (document.title === "DRIZZLE DAWG // INDEX") {
+                document.body.appendChild(document.createElement("br"));
+                document.body.appendChild(document.createElement("br")); 
+                var newHeading = document.createElement("h3");
+                newHeading.textContent = "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. THERE WILL BE ISSUES WITH THE SITE ON YOUR PHONE BECAUSE OPTIMISING FOR MOBILE IS HELL";
+                document.body.appendChild(newHeading);
+                document.body.appendChild(document.createElement("br"));
+                document.body.appendChild(document.createElement("br"));
+                var newHeading = document.createElement("h3");
+                newHeading.textContent = "IM WORKING ON IT BUT SHIT TAKES TIME, YKNOW";
+                document.body.appendChild(newHeading);
+            };
+        });
 
         document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "185%";
         console.log("mobile layout")
