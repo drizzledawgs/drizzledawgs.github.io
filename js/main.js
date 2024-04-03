@@ -24,12 +24,26 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.topbar > h2').style.fontSize = "300%";
         document.getElementById("footer").remove();
         document.querySelectorAll('body > h2').forEach(element => {
-            element.style.fontSize = "100%";
+            element.style.fontSize = "185%";
         });
         document.querySelectorAll('body > h3').forEach(element => {
-            element.style.fontSize = "145%";
+            element.style.fontSize = "185%";
         });
-        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "145%";
+
+        if (document.title === "DRIZZLE DAWG // INDEX") {
+            document.body.appendChild(document.createElement("br"));
+            document.body.appendChild(document.createElement("br")); 
+            var newHeading = document.createElement("h3");
+            newHeading.textContent = "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. THERE WILL BE ISSUES WITH THE SITE ON YOUR PHONE BECAUSE OPTIMISING FOR MOBILE IS HELL";
+            document.body.appendChild(newHeading);
+            document.body.appendChild(document.createElement("br"));
+            document.body.appendChild(document.createElement("br"));
+            var newHeading = document.createElement("h3");
+            newHeading.textContent = "IM WORKING ON IT BUT SHIT TAKES TIME, YKNOW";
+            document.body.appendChild(newHeading);
+        };
+
+        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "185%";
         console.log("mobile layout")
     }
 });
