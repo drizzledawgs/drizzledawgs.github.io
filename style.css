@@ -9,17 +9,92 @@ body {
     image-rendering: pixelated;
     background-position:center;
     background-repeat: no-repeat;
-    text-align: center;
-}
-
-body > h2 {
-    font-size: 250%;
 }
 
 p {
     font-size: 75%;
+}
+
+
+@font-face {
+    font-family: pissjarSans;
+    src: url(font/Pissjar.ttf);
+}
+
+body > .topbar > h2 {
+    margin-top: auto;
+    margin-bottom: 0.5%;
+    text-align: center;
+    font-size: 400%;
+    font-family: pissjarSans;
+}
+
+body > h2 {
+    margin-top: auto;
+    text-align: center;
+    font-size: 250%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1.5px;
+}
+
+.divtostopsitefrombreaking > p {
+    font-size: 75%;
     position: absolute;
-    padding-left: auto;
-    padding-right: auto;
     bottom: 0;
+}
+
+.links {
+    display: flex;
+    justify-content: center; /* horizontally center flex items */
+}
+
+.links h2 {
+    margin-top: auto;
+}
+
+.links h2 a {
+    text-decoration: none; /* remove underline from links */
+    padding: 10px; /* add padding for spacing */
+}
+
+p {
+    text-align: center;
+}
+
+body > h3 {
+    margin-top: auto;
+    text-align: center;
+    font-size: 200%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+}
+
+.thisIsTheDrizzleDawg {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.thisIsTheDrizzleDawg > h3 {
+    margin-top: auto;
+    text-align: center;
+    color: #232820;
+    font-size: 200%;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+    padding-right: 1%;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:99%;
+    height:40px;
+    text-align: center;
+}
+
+.footer > p > a {
+    color: #35184d;
 }

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.backgroundSize = "50%";
         document.querySelector('.topbar > h2').style.fontSize = "350%";
         document.querySelectorAll('body > h2').forEach(element => {
-            element.style.fontSize = "200%";
+            element.style.fontSize = "230%";
         });
         console.log("tablet / 4:3 layout")
     } else {
@@ -23,8 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.topbar > h2').style.fontSize = "300%";
         console.log("mobile layout")
         document.querySelectorAll('body > h2').forEach(element => {
-            element.style.fontSize = "150%";
+            element.style.fontSize = "180%";
         });
+        document.querySelectorAll('body > h3').forEach(element => {
+            element.style.fontSize = "180%";
+        });
+        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "180%";
         console.log("mobile layout")
     }
 });
