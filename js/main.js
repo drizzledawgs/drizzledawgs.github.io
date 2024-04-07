@@ -1,4 +1,5 @@
 // get screen aspect ratio
+// and also do a few other things
 document.addEventListener("DOMContentLoaded", function() {
     var windowHeight = window.innerHeight;
     var windowWidth = window.innerWidth;
@@ -6,7 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (aspectRatio > 1.5) {
         document.body.style.backgroundSize = "40%";
+        
         document.querySelector('.topbar > h2').style.fontSize = "400%";
+        document.querySelector('.aboutbox > h2').style.fontSize = "250%";
+        document.querySelector('.gigbox').style.width = "40%";
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "250%";
         });
@@ -14,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
         document.body.style.backgroundSize = "50%";
         document.querySelector('.topbar > h2').style.fontSize = "350%";
+        document.querySelector('.aboutbox > h2').style.fontSize = "230%";
+        document.querySelector('.gigbox').style.width = "50%";
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "230%";
         });
@@ -22,6 +28,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         document.body.style.backgroundSize = "80%";
         document.querySelector('.topbar > h2').style.fontSize = "300%";
+        document.querySelector('.aboutbox > h2').style.fontSize = "185%";
+        document.querySelector('.gigbox').style.width = "80%";
         document.getElementById("footer").remove();
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "185%";
@@ -48,4 +56,50 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "185%";
         console.log("mobile layout")
     }
+});
+
+// chatgpt json loading code bc i dont really know json
+fetch('news.json')
+.then(response => response.json())
+.then(data => {
+    const newsTable = document.getElementById('newsTable');
+    const newsTableBody = newsTable.querySelector('tbody');
+
+    data.forEach((newsItem, index) => {
+        const row = newsTableBody.insertRow();
+        const dateCell = row.insertCell(0);
+        const detailsCell = row.insertCell(1);
+        dateCell.textContent = newsItem.date;
+        detailsCell.innerHTML = `${newsItem.details.replace(/\n/g, '<br>')}`;
+        
+        detailsCell.style.textAlign = "right";
+        detailsCell.style.textAlign = "right";
+
+    });
+})
+.catch(error => {
+    console.error('Error fetching news data: ', error);
+});
+
+// chatgpt json loading code bc i dont really know json
+fetch('gigs.json')
+.then(response => response.json())
+.then(data => {
+    const newsTable = document.getElementById('gigTable');
+    const newsTableBody = newsTable.querySelector('tbody');
+
+    data.forEach((newsItem, index) => {
+        const row = newsTableBody.insertRow();
+        const dateCell = row.insertCell(0);
+        const detailsCell = row.insertCell(1);
+        dateCell.textContent = newsItem.date;
+        detailsCell.innerHTML = `${newsItem.details.replace(/\n/g, '<br>')}`;
+        
+        detailsCell.style.textAlign = "right";
+        detailsCell.style.textAlign = "right";
+
+    });
+})
+.catch(error => {
+    console.error('Error fetching news data: ', error);
 });
