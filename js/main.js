@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.backgroundSize = "40%";
         
         document.querySelector('.topbar > h2').style.fontSize = "400%";
-        document.querySelector('.aboutbox > h2').style.fontSize = "250%";
         document.querySelector('.gigbox').style.width = "40%";
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "250%";
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
     } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
         document.body.style.backgroundSize = "50%";
         document.querySelector('.topbar > h2').style.fontSize = "350%";
-        document.querySelector('.aboutbox > h2').style.fontSize = "230%";
         document.querySelector('.gigbox').style.width = "50%";
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "230%";
@@ -28,15 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         document.body.style.backgroundSize = "80%";
         document.querySelector('.topbar > h2').style.fontSize = "300%";
-        document.querySelector('.aboutbox > h2').style.fontSize = "185%";
-        document.querySelector('.gigbox').style.width = "80%";
-        document.getElementById("footer").remove();
         document.querySelectorAll('body > h2').forEach(element => {
             element.style.fontSize = "185%";
         });
         document.querySelectorAll('body > h3').forEach(element => {
             element.style.fontSize = "185%";
         });
+
+        var doubleFlexBox = document.querySelector('.doubleFlexBox');
+        doubleFlexBox.style.justifyContent = 'space-between';
+        doubleFlexBox.style.padding = '20px';
 
         window.addEventListener('DOMContentLoaded', () => {
             if (document.title === "DRIZZLE DAWG // INDEX") {
@@ -53,7 +52,51 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         });
 
-        document.querySelector('.thisIsTheDrizzleDawg > h3').style.fontSize = "185%";
+        try {
+            const element = document.querySelector('.thisIsTheDrizzleDawg > h3');
+            if (element) {
+                element.style.fontSize = "185%";
+            } else {
+                console.error("Element not found.");
+            }
+        } catch (error) {
+            console.error("Element not found.");
+        }
+
+        try {
+            const element = document.querySelector('.doubleFlexBox');
+            if (element) {
+                document.querySelector('.doubleFlexBox').style.display = 'block';
+            } else {
+                console.error("Element not found.");
+            }
+        } catch (error) {
+            console.error("Element not found.");
+        }
+
+        try {
+            const element = document.querySelector('.gigbox');
+            if (element) {
+                document.querySelector('.gigbox').style.width = "80%";
+            } else {
+                console.error("Element not found.");
+            }
+        } catch (error) {
+            console.error("Element not found.");
+        }
+
+        try {
+            const element = document.querySelector('.newsbox');
+            if (element) {
+                document.querySelector('.newsbox').style.width = "80%";
+            } else {
+                console.error("Element not found.");
+            }
+        } catch (error) {
+            console.error("Element not found.");
+        }
+
+
         console.log("mobile layout")
     }
 });
