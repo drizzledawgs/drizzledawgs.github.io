@@ -167,7 +167,15 @@ async function fetchMembers() {
     }
     catch (error) {
         console.log("caught error:", error);
-    }
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('memberImg1').src = "img/Noopy.webp";
+            document.getElementById('memberImg2').src = "img/Noopy.webp";
+            document.getElementById('memberImg3').src = "img/Noopy.webp";
+            document.getElementById('memberImg4').src = "img/Noopy.webp";
+            document.getElementById('memberName').innerText = "ERROR";
+            document.getElementById('memberDescription').innerText = `this is an error handler for when members.json couldnt be loaded or parsed properly (aka you shouldn't be seeing this). if you are, that probably means i've fucked up. if this persists, please dm me on instagram about it. `;
+        }
+    )}
 }
 
 async function changeMember() {
