@@ -155,6 +155,20 @@ async function fetchMembers() {
 
 
 let currentMemberIndex = 5;
+let membersData = null;
+
+async function fetchMembers() {
+    try {
+        if (!membersData) {
+            const response = await fetch('members.json');
+            membersData = await response.json();
+        }
+        return membersData;
+    }
+    catch (error) {
+        console.log("caught error:", error);
+    }
+}
 
 async function changeMember() {
     try {
@@ -162,16 +176,19 @@ async function changeMember() {
         currentMemberIndex = (currentMemberIndex + 1) % members.length;
 
         const currentMember = members[currentMemberIndex];
-        document.getElementById('memberImg1').src = currentMember.img1src;
-        document.getElementById('memberImg2').src = currentMember.img2src;
-        document.getElementById('memberImg3').src = currentMember.img3src;
-        document.getElementById('memberImg4').src = currentMember.img4src;
+        if (!currentMember.img1 || !currentMember.img2 || !currentMember.img3 || !currentMember.img4) {
+            document.getElementById('memberImg1').src = currentMember.img1src;
+            document.getElementById('memberImg2').src = currentMember.img2src;
+            document.getElementById('memberImg3').src = currentMember.img3src;
+            document.getElementById('memberImg4').src = currentMember.img4src;
+        }
+
         document.getElementById('memberName').innerText = currentMember.name;
         document.getElementById('memberInstrument').innerText = `INSTRUMENT: ${currentMember.instrument}`;
         document.getElementById('memberGear').innerText = `EQUIPMENT: ${currentMember.gear}`;
         document.getElementById('memberDescription').innerText = `DESCRIPTION: ${currentMember.description}`;
     }
-    catch {
+    catch (error) {
         console.log("caught error, noopy time :3")
             document.getElementById('memberImg1').src = "img/Noopy.webp";
             document.getElementById('memberImg2').src = "img/Noopy.webp";
