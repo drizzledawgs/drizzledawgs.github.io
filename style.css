@@ -42,6 +42,10 @@ body > h2 {
     -webkit-text-stroke: 1.5px;
 }
 
+body > h4 {
+    font-size: 140%;
+}
+
 .divtostopsitefrombreaking > p {
     font-size: 75%;
     position: absolute;
@@ -132,4 +136,108 @@ tr {
 }
 td {
     padding-bottom: 5%;
+}
+
+.memberBox {
+    width: 70%;
+    background-color: #0d0d14ab;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.memberBox > button {
+    font-size: 350%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+    background:none;
+    border:none;
+    cursor: pointer;
+    padding: 2%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.memberText {
+    flex-direction: column;
+    text-align: center;
+    width: 45%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.memberText > h2 {
+    font-size: 250%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1.5px;
+}
+
+.memberText > h3 {
+    font-size: 200%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+}
+
+.memberText > h4 {
+    font-size: 140%;
+}
+
+.memberImages {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.memberImages > img {
+    width: 14vw; /* still unsure on this, for future reference 12vw 5 margin no marginRight is pretty good */
+    height: auto; 
+    margin: 5px; 
+    margin-right: 60px;
+}
+
+
+.memberBoxMobile {
+    width: 95%;
+    background-color: #0d0d14ab;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.memberTexMobile > h2 {
+    font-size: 200%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 1.5px;
+    margin-bottom: 2%;
+}
+
+.memberTexMobile > h3 {
+    margin-top: 0%;
+    font-size: 200%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+    margin-bottom: 2%;
+}
+
+.memberTexMobile > h4 {
+    font-size: 120%;
+  }
+
+.memberTexMobile {
+    text-align: center;
+}
+
+.memberBoxMobile > button {
+    font-size: 350%;
+    color: #232820;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 2px;
+    padding-left: 4%;
+    background:none;
+    border:none;
+    height: 0%;
+    width: 100%;
 }
