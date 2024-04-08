@@ -11,17 +11,37 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    if (windowHeight > "1440") {
+        if (document.title === "DRIZZLE DAWG // INDEX") {
+            const warningMessages = [
+                "THIS WEBSITE IS OPTIMISED FOR SCREENS SMALLER THAN 1440p"
+            ];
+            const body = document.body;
+            warningMessages.forEach(message => {
+                const newHeading = document.createElement("h3");
+                newHeading.textContent = message;
+                body.appendChild(document.createElement("br"));
+                body.appendChild(newHeading);
+            });
+        }
+    }
+
     if (aspectRatio > 1.5) {
         setStyles("40%", "400%", "250%");
+        document.body.style.width = "85%";
+        document.querySelector('.footer').style.width = "85%"
+
     } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
         setStyles("50%", "350%", "230%");
     } else {
         setStyles("80%", "300%", "185%");
 
+        document.body.style.paddingBottom = "15px";
+
         if (document.title === "DRIZZLE DAWG // INDEX") {
             const warningMessages = [
-                "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. THERE WILL BE ISSUES WITH THE SITE ON YOUR PHONE BECAUSE OPTIMISING FOR MOBILE IS HELL",
-                "IM WORKING ON IT BUT SHIT TAKES TIME, YKNOW"
+                "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. IM STILL WORKING ON THE MOBILE SITE",
+                "IM WORKING ON IT BUT WEBDEV SUCKS AND SHIT TAKES TIME, YKNOW"
             ];
             const body = document.body;
             warningMessages.forEach(message => {
@@ -32,17 +52,18 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
+        // mobile specific fixes
         try {
             const elements = ['.thisIsTheDrizzleDawg > h3', '.doubleFlexBox', '.gigbox', '.newsbox'];
             elements.forEach(selector => {
                 const element = document.querySelector(selector);
                 if (element) {
                     if (selector === '.doubleFlexBox') {
-                        element.style.justifyContent = 'space-between';
-                        element.style.padding = '20px';
+                        element.style.justifyContent = 'space-between'; 
                         element.style.display = 'block';
                     } else if (selector === '.gigbox' || selector === '.newsbox') {
-                        element.style.width = "90%";
+                        element.style.width = "85%";
+                        element.style.paddingBottom = "30px";
                     }
                 } else {
                     console.error(`Element ${selector} not found.`);

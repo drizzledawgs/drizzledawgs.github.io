@@ -10,9 +10,9 @@ body {
     background-position:center;
     background-repeat: no-repeat;
     min-height:100%;
-    width: 95%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 5px;
 }
 
 p {
@@ -117,9 +117,10 @@ body > h3 {
 .footer {
     position: fixed; /* Change from absolute to fixed */
     bottom: 0;
-    width: 85%;
-    height: 40px;
+    width: 100%;
+    height: 35px;
     text-align: center;
+    background-color: #1a1220e1;
 }
 
 .footer > p > a {
