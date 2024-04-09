@@ -64,6 +64,15 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
 
+        if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
+            const warningMessages = [
+                "FOR MOBILE USERS: SWIPE LEFT ON THE BOX, OR PRESS THE ARROW BUTTON AT THE BOTTOM TO CHANGE THE PROFILE SELECTED"
+            ];
+            const warningHTML = warningMessages.map(message => `<p>${message}</p>`).join('');
+            document.querySelector('.memberBox').insertAdjacentHTML('beforebegin', warningHTML);
+        }
+
+
         // mobile specific fixes
         try {
             const elements = ['.doubleFlexBox', '.gigbox', '.newsbox', '.memberImagesMobile > img'];
@@ -122,7 +131,6 @@ function fetchUpdates(jsonUrl, tableId) {
     })
     .catch(error => {
         console.error(`Error fetching ${jsonUrl} data: `, error);
-        document.addEventListener("DOMContentLoaded", function() {
             const table = document.getElementById(tableId);
             const tableBody = table.querySelector('tbody');
             const row = tableBody.insertRow();
@@ -130,7 +138,6 @@ function fetchUpdates(jsonUrl, tableId) {
             const detailsCell = row.insertCell(1);
             dateCell.textContent = "ERROR";
             detailsCell.textContent = "failed to fetch or parse json";
-        });
     });
 }
 
@@ -212,6 +219,30 @@ async function changeMember() {
 if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
     changeMember();
 }
+
+let touchstartX = 0;
+let touchendX = 0;
+
+// Function to trigger swipe direction check
+function checkDirection() {
+  const threshold = 50; // Adjust as needed
+  if (touchendX < touchstartX - threshold) {
+    changeMember();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.memberBoxMobile').addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.memberBoxMobile').addEventListener('touchend', e => {
+    touchendX = e.changedTouches[0].screenX;
+    checkDirection();
+    });
+});
 
 fetchUpdates('news.json', 'newsTable');
 fetchUpdates('gigs.json', 'gigTable');
