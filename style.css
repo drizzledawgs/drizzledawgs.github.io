@@ -241,3 +241,9 @@ td {
     height: 0%;
     width: 100%;
 }
+
+.transparencyBox {
+    background-color: #0d0d14e1;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+}
