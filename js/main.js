@@ -11,30 +11,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (windowHeight > "1440") {
-        if (document.title === "DRIZZLE DAWG // INDEX") {
-            const warningMessages = [
-                "THIS WEBSITE IS OPTIMISED FOR SCREENS SMALLER THAN 1440p"
-            ];
-            const body = document.body;
-            warningMessages.forEach(message => {
-                const newHeading = document.createElement("h3");
-                newHeading.textContent = message;
-                body.appendChild(document.createElement("br"));
-                body.appendChild(newHeading);
-            });
-        }
-    }
-
     if (aspectRatio > 1.5) {
-        setStyles("40%", "400%", "250%");
-        document.body.style.width = "85%";
-        document.querySelector('.footer').style.width = "85%"
-        try {
-            element = document.querySelector(".memberBoxMobile");
-            element.parentNode.removeChild(element);
-        } catch (error) {
-            console.error("Error while removing: ", error);
+        if ((windowHeight > "1440")) {
+            if (document.title === "DRIZZLE DAWG // INDEX") {
+                const warningMessages = [
+                    "THIS WEBSITE IS NOT MEANT FOR SCREENS BIGGER THAN 1440P. I TRIED MY BEST TO MAKE THINGS WORK, BUT EXPECT ISSUES."
+                ];
+                const body = document.body;
+                warningMessages.forEach(message => {
+                    const newHeading = document.createElement("h3");
+                    newHeading.textContent = message;
+                    body.appendChild(document.createElement("br"));
+                    body.appendChild(newHeading);
+                });
+            }
+            setStyles("40%", "450%", "450%");
+        }
+        else {
+            document.body.style.width = "85%";
+            document.querySelector('.footer').style.width = "85%"
+            try {
+                element = document.querySelector(".memberBoxMobile");
+                element.parentNode.removeChild(element);
+            } catch (error) {
+                console.error("Error while removing: ", error);
+            }
         }
 
     } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
@@ -225,7 +226,7 @@ let touchendX = 0;
 
 // Function to trigger swipe direction check
 function checkDirection() {
-  const threshold = 50; // Adjust as needed
+  const threshold = 50; 
   if (touchendX < touchstartX - threshold) {
     changeMember();
   }
