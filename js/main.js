@@ -11,45 +11,28 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // set variable css values and stuff
-    if (aspectRatio > 1.5) {
-        if ((windowHeight > "1440")) {
-            if (document.title === "DRIZZLE DAWG // INDEX") {
-                const warningMessages = [
-                    "THIS WEBSITE IS NOT MEANT FOR SCREENS BIGGER THAN 1440P. I TRIED MY BEST TO MAKE THINGS WORK, BUT EXPECT ISSUES."
-                ];
-                const body = document.body;
-                warningMessages.forEach(message => {
-                    const newHeading = document.createElement("h3");
-                    newHeading.textContent = message;
-                    body.appendChild(document.createElement("br"));
-                    body.appendChild(newHeading);
-                });
-            }
-            setStyles("40%", "450%", "450%");
-        }
-        else {
-            document.body.style.width = "85%";
-            document.querySelector('.footer').style.width = "85%"
-            try {
-                element = document.querySelector(".memberBoxMobile");
-                element.parentNode.removeChild(element);
-            } catch (error) {
-                console.error("Error while removing: ", error);
-            }
-        }
-
-    } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
-        setStyles("50%", "350%", "230%");
+    function removeElement(selector) {
         try {
-            element = document.querySelector(".memberBoxMobile");
+            const element = document.querySelector(selector);
             element.parentNode.removeChild(element);
         } catch (error) {
             console.error("Error while removing: ", error);
         }
+    }
+
+    if (aspectRatio > 1.5) {
+        if (windowHeight > 1440) {
+            setStyles("40%", "450%", "450%");
+        } else {
+            document.body.style.width = "85%";
+            document.querySelector('.footer').style.width = "85%";
+            removeElement(".memberBoxMobile");
+        }
+    } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
+        setStyles("50%", "350%", "230%");
+        removeElement(".memberBoxMobile");
     } else {
         setStyles("80%", "300%", "185%");
-
         document.body.style.paddingBottom = "15px";
 
         if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
@@ -60,47 +43,43 @@ document.addEventListener("DOMContentLoaded", function() {
             document.querySelector('.memberBox').insertAdjacentHTML('beforebegin', warningHTML);
         }
 
-
         // mobile specific fixes
-        try {
-            const elements = ['.doubleFlexBox', '.gigbox', '.newsbox', '.memberImagesMobile > img'];
-            elements.forEach(selector => {
-                const element = document.querySelector(selector);
-                if (element) {
-                    if (selector === '.doubleFlexBox') {
-                        element.style.justifyContent = 'space-between'; 
-                        element.style.display = 'block';
-                    } else if (selector === '.gigbox' || selector === '.newsbox') {
-                        element.style.width = "85%";
-                        element.style.paddingBottom = "30px";
-                    }
-                    else if (selector === '.memberImagesMobile > img') {
-                        const elements = document.querySelectorAll('.memberImagesMobile > img');
-                        elements.forEach(element => {
-                            element.style.width = "40vw";
-                        });
-                        const container = document.querySelector('.memberImagesMobile');
-                        container.style.marginLeft = "auto";
-                        container.style.marginRight = "auto";
-                        container.style.textAlign = "center";
-                    }
-                } else {
-                    console.error(`Element ${selector} not found.`);
+        const elements = ['.doubleFlexBox', '.gigbox', '.newsbox', '.memberImagesMobile > img'];
+        elements.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                if (selector === '.doubleFlexBox') {
+                    element.style.justifyContent = 'space-between'; 
+                    element.style.display = 'block';
+                } else if (selector === '.gigbox' || selector === '.newsbox') {
+                    element.style.width = "85%";
+                    element.style.paddingBottom = "30px";
+                } else if (selector === '.memberImagesMobile > img') {
+                    const elements = document.querySelectorAll('.memberImagesMobile > img');
+                    elements.forEach(element => {
+                        element.style.width = "40vw";
+                    });
+                    const container = document.querySelector('.memberImagesMobile');
+                    container.style.marginLeft = "auto";
+                    container.style.marginRight = "auto";
+                    container.style.textAlign = "center";
                 }
-            });
-        } catch (error) {
-            console.error("Error while styling elements: ", error);
-        }
-        try {
-            element = document.querySelector(".memberBox");
-            element.parentNode.removeChild(element);
-        } catch (error) {
-            console.error("Error while removing: ", error);
-        }
-        
+            } else {
+                console.error(`Element ${selector} not found.`);
+            }
+        });
+        removeElement(".memberBox");
     }
 });
 
+
+
+
+
+
+
+
+// get update info
 function fetchUpdates(jsonUrl, tableId) {
     fetch(jsonUrl)
     .then(response => response.json())
@@ -123,34 +102,36 @@ function fetchUpdates(jsonUrl, tableId) {
             const tableBody = table.querySelector('tbody');
             const row = tableBody.insertRow();
             const dateCell = row.insertCell(0);
-            const detailsCell = row.insertCell(1);
             dateCell.textContent = "ERROR";
-            detailsCell.textContent = "failed to fetch or parse json";
     });
 }
 
-async function fetchMembers() {
-    try {
-        const response = await fetch('members.json');
-        const data = await response.json();
-        return data;
-    }
-    catch (error) {
-        console.log("caught error:", error);
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('memberImg1').src = "img/Noopy.webp";
-            document.getElementById('memberImg2').src = "img/Noopy.webp";
-            document.getElementById('memberImg3').src = "img/Noopy.webp";
-            document.getElementById('memberImg4').src = "img/Noopy.webp";
-            document.getElementById('memberName').innerText = "ERROR";
-            document.getElementById('memberDescription').innerText = `this is an error handler for when members.json couldnt be loaded or parsed properly (aka you shouldn't be seeing this). if you are, that probably means i've fucked up. if this persists, please dm me on instagram about it. `;
-        });
-    }
+if (document.title === "DRIZZLE DAWG // HOME") {
+    fetchUpdates('gigs.json', 'gigTable');
+} else if (document.title === "DRIZZLE DAWG // NEWS") {
+    fetchUpdates('news.json', 'newsTable');
+    fetchUpdates('gigs.json', 'gigTable');
 }
+
+
+
+
+
 
 
 let currentMemberIndex = 5;
 let membersData = null;
+
+function handleError() {
+    console.log("error detected, noopy time :3");
+        document.getElementById('memberImg1').src = "img/Noopy.webp";
+        document.getElementById('memberImg2').src = "img/Noopy.webp";
+        document.getElementById('memberImg3').src = "img/Noopy.webp";
+        document.getElementById('memberImg4').src = "img/Noopy.webp";
+        document.getElementById('memberName').innerText = "ERROR";
+        document.getElementById('memberDescription').innerText = `this is an error handler for when members.json failed to load / parse. if you are, try refreshing the page.`;
+}
+
 
 async function fetchMembers() {
     try {
@@ -161,16 +142,8 @@ async function fetchMembers() {
         return membersData;
     }
     catch (error) {
-        console.log("caught error:", error);
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('memberImg1').src = "img/Noopy.webp";
-            document.getElementById('memberImg2').src = "img/Noopy.webp";
-            document.getElementById('memberImg3').src = "img/Noopy.webp";
-            document.getElementById('memberImg4').src = "img/Noopy.webp";
-            document.getElementById('memberName').innerText = "ERROR";
-            document.getElementById('memberDescription').innerText = `this is an error handler for when members.json couldnt be loaded or parsed properly (aka you shouldn't be seeing this). if you are, that probably means i've fucked up. if this persists, please dm me on instagram about it. `;
+        handleError()
         }
-    )}
 }
 
 async function changeMember() {
@@ -192,15 +165,8 @@ async function changeMember() {
         document.getElementById('memberDescription').innerText = `DESCRIPTION: ${currentMember.description}`;
     }
     catch (error) {
-        console.log("caught error, noopy time :3")
-            document.getElementById('memberImg1').src = "img/Noopy.webp";
-            document.getElementById('memberImg2').src = "img/Noopy.webp";
-            document.getElementById('memberImg3').src = "img/Noopy.webp";
-            document.getElementById('memberImg4').src = "img/Noopy.webp";
-            document.getElementById('memberName').innerText = "ERROR";
-            document.getElementById('memberDescription').innerText = `this is an error handler for when members.json couldnt be loaded or parsed properly (aka you shouldn't be seeing this). if you are, that probably means i've fucked up. if this persists, please dm me on instagram about it. `;
-        }
-
+        handleError()
+    }
 }
 
 // Load the first member when the page loads
@@ -231,6 +197,3 @@ document.addEventListener("DOMContentLoaded", function() {
     checkDirection();
     });
 });
-
-fetchUpdates('news.json', 'newsTable');
-fetchUpdates('gigs.json', 'gigTable');
