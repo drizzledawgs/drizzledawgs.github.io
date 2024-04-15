@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // set variable css values and stuff
     if (aspectRatio > 1.5) {
         if ((windowHeight > "1440")) {
             if (document.title === "DRIZZLE DAWG // INDEX") {
@@ -50,20 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
         setStyles("80%", "300%", "185%");
 
         document.body.style.paddingBottom = "15px";
-
-        if (document.title === "DRIZZLE DAWG // INDEX") {
-            const warningMessages = [
-                "THIS WEBSITE IS OPTIMISED FOR COMPUTERS. IM STILL WORKING ON THE MOBILE SITE",
-                "IM WORKING ON IT BUT WEBDEV SUCKS AND SHIT TAKES TIME, YKNOW"
-            ];
-            const body = document.body;
-            warningMessages.forEach(message => {
-                const newHeading = document.createElement("h3");
-                newHeading.textContent = message;
-                body.appendChild(document.createElement("br"));
-                body.appendChild(newHeading);
-            });
-        }
 
         if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
             const warningMessages = [
