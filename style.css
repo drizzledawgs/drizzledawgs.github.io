@@ -66,6 +66,17 @@ body > h4 {
     padding: 10px; /* add padding for spacing */
 }
 
+#memberImg1, #memberImg2, #memberImg3, #memberImg4 { /* stupid */
+    image-rendering: auto;
+}
+
+.aboutBanner {
+    scale: 80%;
+    image-rendering: auto;
+    text-align: center;
+    padding-top: 0%;
+}
+
 .newsbox > h2 {
     margin-top: auto;
     text-align: center;

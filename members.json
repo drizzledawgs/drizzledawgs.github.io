@@ -2,7 +2,6 @@
     {
         "name": "JAE",
         "instrument": "VOCALS",
-        "gear": "microphone",
         "description": "temporary description",
         "img1src": "img/member/jae1.webp",
         "img2src": "img/member/jae2.webp",
@@ -12,7 +11,6 @@
     {
         "name": "KEITH",
         "instrument": "VOCALS",
-        "gear": "guitar hero for wii microphone",
         "description": "temporary description",
         "img1src": "img/member/keith1.webp",
         "img2src": "img/member/keith2.webp",
@@ -32,7 +30,6 @@
     {
         "name": "ELLA",
         "instrument": "GUITAR",
-        "gear": "ephiphone lesbo paul",
         "description": "temporary description",
         "img1src": "img/member/ella1.webp",
         "img2src": "img/member/ella2.webp",
@@ -42,8 +39,7 @@
     {
         "name": "TYLER",
         "instrument": "BASS",
-        "gear": "defretted yamaha on life support",
-        "description": "jazz bassist and pianist, somehow ended up in a punk band. not good at either genre ",
+        "description": "jazz bassist and pianist, somehow ended up in a punk band. not good at either genre",
         "img1src": "img/member/tyler1.webp",
         "img2src": "img/member/tyler2.webp",
         "img3src": "img/member/tyler3.webp",
@@ -52,7 +48,6 @@
     {
         "name": "SAM",
         "instrument": "GUITAR",
-        "gear": "pretty girlypop pink squier strat",
         "description": "temporary description",
         "img1src": "img/member/sam1.webp",
         "img2src": "img/member/sam2.webp",

@@ -42,7 +42,6 @@ async function changeMember() {
 
         document.getElementById('memberName').innerText = currentMember.name;
         document.getElementById('memberInstrument').innerText = `INSTRUMENT: ${currentMember.instrument}`;
-        document.getElementById('memberGear').innerText = `EQUIPMENT: ${currentMember.gear}`;
         document.getElementById('memberDescription').innerText = `DESCRIPTION: ${currentMember.description}`;
     }
     catch (error) {
@@ -66,6 +65,8 @@ function checkDirection() {
   }
 }
 
+// make sure to comment your code because i didnt for this function
+// and it took me embarresingly long to realise what it was actually doing lol
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.memberBoxMobile').addEventListener('touchstart', e => {
         touchstartX = e.changedTouches[0].screenX;

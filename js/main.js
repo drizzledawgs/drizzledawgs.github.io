@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { /* i should have just used css calls for this oh my god */
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
     const aspectRatio = windowWidth / windowHeight;
