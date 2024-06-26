@@ -41,8 +41,8 @@ async function changeMember() {
         }
 
         document.getElementById('memberName').innerText = currentMember.name;
-        document.getElementById('memberInstrument').innerText = `INSTRUMENT: ${currentMember.instrument}`;
-        document.getElementById('memberDescription').innerText = `DESCRIPTION: ${currentMember.description}`;
+        document.getElementById('memberInstrument').innerText = `${currentMember.instrument}`;
+        document.getElementById('memberDescription').innerText = `${currentMember.description}`;
     }
     catch (error) {
         handleError()

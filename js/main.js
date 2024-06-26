@@ -31,9 +31,12 @@ document.addEventListener("DOMContentLoaded", function() { /* i should have just
     } else if (aspectRatio >= 0.9 && aspectRatio <= 1.5) {
         setStyles("50%", "350%", "230%");
         removeElement(".memberBoxMobile");
+        document.querySelector('.memberPhotoBannerThing').style.width = '75%';
     } else {
         setStyles("80%", "300%", "185%");
         document.body.style.paddingBottom = "15px";
+        document.querySelector('.memberPhotoBannerThing').style.width = '95%';
+
 
         if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
             const warningMessages = [

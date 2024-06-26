@@ -155,6 +155,19 @@ td {
     padding-bottom: 4vh;
 }
 
+.memberPhotoBannerThing {
+    width: 65%;
+    background-color: #0d0d14ab;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+.memberPhotoBannerThing > img {
+    width: 100%; /* still unsure on this, for future reference 12vw 5 margin no marginRight is pretty good */
+    height: auto; 
+}
+
  /* unvisited link */
  a:link {
     color: rgb(83, 122, 83);
