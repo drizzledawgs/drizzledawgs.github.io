@@ -70,13 +70,6 @@ body > h4 {
     image-rendering: auto;
 }
 
-.aboutBanner {
-    scale: 80%;
-    image-rendering: auto;
-    text-align: center;
-    padding-top: 0%;
-}
-
 .newsbox > h2 {
     margin-top: auto;
     text-align: center;
@@ -156,11 +149,12 @@ td {
 }
 
 .memberPhotoBannerThing {
-    width: 65%;
+    width: 70%;
     background-color: #0d0d14ab;
     margin-right: auto;
     margin-left: auto;
     display: flex;
+    image-rendering: auto;
 }
 
 .memberPhotoBannerThing > img {
