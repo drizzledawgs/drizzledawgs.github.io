@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() { /* i should have just
     } else {
         setStyles("80%", "300%", "185%");
         document.body.style.paddingBottom = "15px";
-        document.querySelector('.memberPhotoBannerThing').style.width = '95%';
 
 
         if (document.title === "DRIZZLE DAWG // MEMBER PROFILES") {
@@ -72,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() { /* i should have just
             }
         });
         removeElement(".memberBox");
+        document.querySelector('.memberPhotoBannerThing').style.width = '95%'; // im lazy and dont wanna wrap this in a try
     }
 });
 
